@@ -1,10 +1,11 @@
 const timeAgo = require('node-time-ago');
+const html = require("html-template-tag");
 
 const postList = (posts) => {
   const myPosts = posts
       .map(
-        (post) =>
-          `<div class='news-item'>
+        (post) => 
+          html`<div class='news-item'>
               <p>
                 <span class='news-position'>${post.id}. ▲</span><a href='/posts/${post.id}'>${post.title}</a>
                   <small>(by ${post.name})</small>
